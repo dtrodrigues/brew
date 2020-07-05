@@ -1,14 +1,13 @@
 name: GitHub Actions CI
 on:
   push:
-    branches: master
+    branches: shellcheck2
   pull_request: []
 env:
   HOMEBREW_GITHUB_ACTIONS: 1
   HOMEBREW_NO_AUTO_UPDATE: 1
 jobs:
   tests:
-    if: github.repository == 'Homebrew/brew'
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -170,7 +169,7 @@ jobs:
     - name: Run ShellCheck
       run: |
         brew install shellcheck
-        shellcheck bin/brew
+        shellcheck --color bin/brew
         ven='./Library/Homebrew/vendor/*'
         taps='./Library/Taps/*'
         find . -type f -iname "*\.sh" -not -path "$ven" -not -path "$taps" -exec shellcheck --color  {} \;
