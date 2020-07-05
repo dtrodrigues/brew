@@ -123,7 +123,7 @@ module Homebrew
       # TODO: check, fix completions here too.
       # TODO: consider using ShellCheck JSON output
       shellcheck_success = system shellcheck, "--shell=bash", *shell_files
-      rubocop_success && shellcheck_success
+      rubocop_success && !shellcheck_success
     end
 
     class RubocopResults
