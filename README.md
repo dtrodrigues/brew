@@ -3,6 +3,7 @@
 
 Features, usage and installation instructions are [summarised on the homepage](https://brew.sh). Terminology (e.g. the difference between a Cellar, Tap, Cask and so forth) is [explained here](https://docs.brew.sh/Formula-Cookbook#homebrew-terminology).
 
+
 ## What Packages Are Available?
 1. Type `brew search` for a list.
 2. Or visit [formulae.brew.sh](https://formulae.brew.sh) to browse packages online.
