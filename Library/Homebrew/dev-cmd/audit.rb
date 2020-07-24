@@ -658,6 +658,12 @@ module Homebrew
         end
 
         next if spec.patches.empty?
+
+        spec.patches.each do |p|
+          if p.url.match?(%r{https://github.com/[^/].*/[^/].*/pull})
+            problem "#{p.url} is a PR diff whose contents may change. Please link directly to the commit."
+          end
+        end
         next unless @new_formula
 
         new_formula_problem(
